@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divergência de CNPJ - V360</title>
+
+    
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #0066a1;
+            padding: 12px 40px;
+            display: flex;
+            gap: 24px;
+            color: white;
+            font-size: 14px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .navbar a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            padding: 40px;
+            background-color: white;
+            margin: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .text-section {
+            flex: 2;
+            padding-right: 30px;
+        }
+
+        .text-section h2 {
+            color: #0066a1;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-left: 4px solid #0066a1;
+            padding-left: 15px;
+        }
+
+        .text-section h3 {
+            color: #333;
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .text-section h4 {
+            color: #0066a1;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .text-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .text-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .text-section p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 50px 40px 20px;
+            color: #0066a1;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+        }
+
+        .warning-box:before {
+            content: "⚠️";
+            font-size: 20px;
+        }
+
+        .info-box {
+            background-color: #d1ecf1;
+            border-left: 4px solid #0066a1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .success-box {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .divider {
+            border-top: 2px solid #ddd;
+            margin: 30px 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .link-button {
+            display: inline-block;
+            background-color: #0066a1;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px 0;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+        }
+
+        .link-button:hover {
+            background-color: #004d7a;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                margin: 10px 20px;
+            }
+
+            .text-section {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .navbar {
+                flex-wrap: wrap;
+                gap: 12px;
+                padding: 12px 20px;
+            }
+
+            .section-title {
+                margin: 30px 20px 15px;
+                font-size: 24px;
+            }
+        }
+    </style>
+
+</head>
+    
+<body>
+    
+    
+    <div class="navbar">
+        <a href="index.html#inicio">Página Inicial</a>
+        <a href="index.html#divergencias">Divergências</a>
+        <a href="index.html#acesso">Solicitação de Acesso</a>
+        <a href="index.html#dashboard">Dashboard</a>
+        <a href="index.html#busca">Busca de Notas</a>
+    </div>
+
+    <div class="section-title">Divergência de CNPJ do Tomador e/ou do Fornecedor</div>
+
+    <div class="container">
+        <div class="text-section">
+            <h2>O que é essa divergência?</h2>
+            <p>Essa divergência ocorre quando o <strong>CNPJ informado na Nota Fiscal não corresponde ao CNPJ informado na Ordem de Compra (OC)</strong>. Ela pode envolver tanto o <strong>Fornecedor</strong> quanto o <strong>Tomador</strong> do serviço/produto (local de cobrança e/ou local de remessa).</p>
+
+            <div class="divider"></div>
+
+            <h3>Como a divergência acontece</h3>
+            <p>Essa situação costuma ocorrer nos seguintes cenários:</p>
+            <ul>
+                <li>A OC foi aberta com um CNPJ diferente do que foi utilizado pelo fornecedor na emissão da Nota Fiscal;</li>
+                <li>O fornecedor emitiu a nota para outro CNPJ da companhia (ex.: unidade incorreta, CNPJ antigo ou migrado);</li>
+                <li>Houve reestruturação/migração de CNPJs e a Nota foi emitida com base em dados desatualizados;</li>
+                <li>Erro operacional no momento da emissão da Nota Fiscal pelo fornecedor;</li>
+                <li>Divergência entre:
+                    <ul style="list-style-type: circle; padding-left: 40px;">
+                        <li>CNPJ do Fornecedor da OC x CNPJ do Fornecedor da NF</li>
+                        <li>CNPJ do Tomador do Pedido (local de cobrança/remessa) x CNPJ do Tomador da NF</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <h2>Impactos no processo</h2>
+            <div class="warning-box">
+                <div>
+                    <strong>⚠️ Quando há divergência de CNPJ:</strong>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>O processo acusa divergência e fica parado no sistema até a regularização</li>
+                        <li>A Nota Fiscal não pode ser confirmada nem enviada para pagamento;</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <h2>Como regularizar</h2>
+            <p>Para corrigir a divergência, é necessário avaliar o cenário e seguir uma das tratativas abaixo:</p>
+
+            <div class="success-box">
+                <h3>Quando a OC está incorreta:</h3>
+                <ul>
+                    <li><strong>Cancelar a OC com o CNPJ incorreto.</strong></li>
+                    <li><strong>Abrir uma nova RC/OC com o CNPJ correto</strong> (tomador e/ou fornecedor);</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <h3>Quando a Nota Fiscal está incorreta:</h3>
+                <ul>
+                    <li><strong>Solicitar ao fornecedor o cancelamento da Nota Fiscal;</strong></li>
+                    <li><strong>Orientar a reemissão da NF com o CNPJ correto,</strong> exatamente conforme a OC;</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <strong>💡 Importante:</strong> Sempre confira os CNPJs antes de criar a OC e oriente o fornecedor a verificar os dados antes de emitir a Nota Fiscal. Isso previne a ocorrência dessa divergência.
+            </div>
+
+            <div class="divider"></div>
+
+            <a href="index.html#divergencias" class="link-button">← Voltar para Divergências</a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll para links da navbar
+        document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxos Disponíveis no V360 - GNP</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #0066a1;
+            padding: 12px 40px;
+            display: flex;
+            gap: 24px;
+            color: white;
+            font-size: 14px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .navbar a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0066a1 0%, #004d7a 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            padding: 40px;
+            background-color: white;
+            margin: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .text-section {
+            flex: 2;
+            padding-right: 30px;
+        }
+
+        .text-section h2 {
+            color: #0066a1;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-left: 4px solid #0066a1;
+            padding-left: 15px;
+        }
+
+        .text-section h3 {
+            color: #0066a1;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .text-section h4 {
+            color: #333;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .text-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .text-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .text-section p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 50px 40px 20px;
+            color: #0066a1;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .info-box {
+            background-color: #d1ecf1;
+            border-left: 4px solid #0066a1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #0066a1;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 20px 40px;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background-color: #004d7a;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                margin: 10px 20px;
+            }
+
+            .text-section {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .navbar {
+                flex-wrap: wrap;
+                gap: 12px;
+                padding: 12px 20px;
+            }
+
+            .section-title {
+                margin: 30px 20px 15px;
+                font-size: 24px;
+            }
+
+            .hero-section {
+                padding: 40px 20px;
+            }
+
+            .hero-section h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+    
+<body>
+    
+    <div class="navbar">
+        <a href="index.html">Página Inicial</a>
+        <a href="index.html#acesso">Solicitação de Acesso</a>
+        <a href="index.html#dashboard">Dashboard</a>
+        <a href="index.html#busca">Busca de Notas</a>
+        <a href="index.html#fornecedores">Fornecedores</a>
+        <a href="index.html#divergencias">Divergências</a>
+        <a href="index.html#acompanhamento">Acompanhamento de Processos</a>
+        <a href="index.html#chamado">Abrir Chamado</a>
+    </div>
+
+    <div class="hero-section">
+        <h1>🚦 Fluxos disponíveis no V360</h1>
+        <p>Na ferramenta V360, tratamos diferentes tipos de processos, cada um com regras próprias.</p>
+    </div>
+
+    <a href="index.html" class="back-button">← Voltar para Página Inicial</a>
+
+    <div class="container" id="servico">
+        <div class="text-section">
+            <h3>🔹 Fluxo de Serviço</h3>
+            <p>O V360 possui conexão com mais de 180 prefeituras para captura automática das Notas Fiscais de Serviço eletrônicas. Sendo assim, para a maioria dos documentos a captura será automatizada, os demais documentos que não forem capturados deverão ser escritos de forma manual no V360.</p>
+            <ul>
+                <li>Processos capturados automaticamente ou lançados manualmente.</li>
+                <li>Utilizado para serviços prestados por fornecedores.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" id="material">
+        <div class="text-section">
+            <h3>🔹 Fluxo de Material</h3>
+            <p>V360 possui uma conexão direta com a Secretaria de Estado da Fazenda (SEFAZ), sendo assim, a ferramenta realiza de forma automática a captura dos Documentos Fiscais de Materiais e dos Documentos Fiscais de Transporte, algumas horas depois dele ser emitido.</p>
+            <ul>
+                <li>Captura automática de Notas Fiscais de mercadorias.</li>
+                <li>Refere-se às compras solicitadas pelas unidades.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" id="cte">
+        <div class="text-section">
+            <h3>🔹 Fluxo de CTe (Conhecimento de Transporte Eletrônico)</h3>
+            <p>V360 possui uma conexão direta com a Secretaria de Estado da Fazenda (SEFAZ), sendo assim, a ferramenta realiza de forma automática a captura dos Documentos Fiscais de Materiais e dos Documentos Fiscais de Transporte, algumas horas depois dele ser emitido.</p>
+            <ul>
+                <li>Documento fiscal digital que registra transporte de cargas por todos os modais.</li>
+                <li>Substitui documentos em papel.</li>
+                <li>Capturado 100% automático pelo sistema.</li>
+            </ul>
+            <div class="info-box">
+                <strong>Informações importantes:</strong>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Item correto:</strong> 300000104</li>
+                    <li><strong>Descrição:</strong> Fretes e Carretos Intermunicipais</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="cteos">
+        <div class="text-section">
+            <h3>🔹 Fluxo de CTeOS (Outros Serviços de Transporte)</h3>
+            <p>V360 possui uma conexão direta com a Secretaria de Estado da Fazenda (SEFAZ), sendo assim, a ferramenta realiza de forma automática a captura dos Documentos Fiscais de Materiais e dos Documentos Fiscais de Transporte, algumas horas depois dele ser emitido.</p>
+            <ul>
+                <li>Documento fiscal eletrônico para transporte sem mercadorias (passageiros, bagagens, valores, mudanças, etc.).</li>
+                <li>Capturado 100% automático pelo sistema.</li>
+            </ul>
+            <div class="info-box">
+                <strong>Informações importantes:</strong>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Item correto:</strong> 300000099</li>
+                    <li><strong>Descrição:</strong> Serviço de Transporte de Passageiros Intermunicipal</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="outros-documentos">
+        <div class="text-section">
+            <h3>🔹 Fluxo de Outros Documentos</h3>
+            <ul>
+                <li>Inserção 100% manual feita pelo fornecedor ou solicitante.</li>
+                <li>Os demais documentos que não se encaixam nos tipos mencionados anteriormente, serão inseridos através do fluxo de Outros Documentos. Como estes documentos não são eletrônicos eles deverão ser inseridos de forma manual no V360.</li>
+            </ul>
+            <p><strong>Os tipos de Outros Documentos são:</strong></p>
+            <ul>
+                <li>Fatura</li>
+                <li>Boleto</li>
+                <li>Nota de Débito</li>
+                <li>Recibo</li>
+                <li>Direito Autoral</li>
+                <li>Multa</li>
+                <li>Prêmio Acadêmico</li>
+                <li>Nota de Comunicação</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" id="alugueis">
+        <div class="text-section">
+            <h3>🔹 Fluxo de Aluguéis</h3>
+            <ul>
+                <li>Processos relacionados a contratos de locação.</li>
+                <li>Os processos de aluguel são gerados a partir do cadastro dos contratos no V360. Todo mês, na data escolhida para abertura dos processos, o V360 gera de forma automática o processo de aluguel a ser pago.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" id="invoices">
+        <div class="text-section">
+            <h3>🔹 Invoices e Faturas de Telecom Obs (Fluxos Internacionais/ Moedas estrangeira)</h3>
+            <ul>
+                <li>Fluxo específico tratado no sistema.</li>
+                <li>Os documentos de Invoice (Nota Estrangeira) deverão ser inseridos de forma manual no V360.</li>
+                <li>O fluxo de notas de Telecom terá inserção manual pelo time TNX no V360.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="info-box" style="margin: 40px;">
+        <strong>Em caso de dúvidas, entre em contato com a equipe de Gestão de Notas e Processos (GNP).</strong>
+    </div>
+
+    <script>
+        // Smooth scroll para links de âncora
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

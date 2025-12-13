@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divergência de Saldo Insuficiente - V360</title>
+
+    
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #0066a1;
+            padding: 12px 40px;
+            display: flex;
+            gap: 24px;
+            color: white;
+            font-size: 14px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .navbar a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            padding: 40px;
+            background-color: white;
+            margin: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .text-section {
+            flex: 2;
+            padding-right: 30px;
+        }
+
+        .text-section h2 {
+            color: #0066a1;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-left: 4px solid #0066a1;
+            padding-left: 15px;
+        }
+
+        .text-section h3 {
+            color: #333;
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .text-section h4 {
+            color: #0066a1;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .text-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .text-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .text-section p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 50px 40px 20px;
+            color: #0066a1;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+        }
+
+        .warning-box:before {
+            content: "⚠️";
+            font-size: 20px;
+        }
+
+        .info-box {
+            background-color: #d1ecf1;
+            border-left: 4px solid #0066a1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .success-box {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .divider {
+            border-top: 2px solid #ddd;
+            margin: 30px 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .link-button {
+            display: inline-block;
+            background-color: #0066a1;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px 0;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+        }
+
+        .link-button:hover {
+            background-color: #004d7a;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                margin: 10px 20px;
+            }
+
+            .text-section {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .navbar {
+                flex-wrap: wrap;
+                gap: 12px;
+                padding: 12px 20px;
+            }
+
+            .section-title {
+                margin: 30px 20px 15px;
+                font-size: 24px;
+            }
+        }
+    </style>
+
+</head>
+    
+<body>
+    
+    
+    <div class="navbar">
+        <a href="index.html#inicio">Página Inicial</a>
+        <a href="index.html#divergencias">Divergências</a>
+        <a href="index.html#acesso">Solicitação de Acesso</a>
+        <a href="index.html#dashboard">Dashboard</a>
+        <a href="index.html#busca">Busca de Notas</a>
+    </div>
+
+    <div class="section-title">Divergência de Saldo Insuficiente</div>
+
+    <div class="container">
+        <div class="text-section">
+            <h2>O que é a Divergência de Saldo Insuficiente?</h2>
+            <p>Essa divergência ocorre quando o <strong>valor total da Nota Fiscal é superior ao saldo disponível na Ordem de Compra (OC)</strong> vinculada ao processo, impossibilitando a continuidade do fluxo.</p>
+
+            <div class="divider"></div>
+
+            <h3>Ela pode acontecer, principalmente, nas seguintes situações:</h3>
+            <ul>
+                <li>A Nota Fiscal foi emitida com valor diferente do que estava previsto na OC;</li>
+                <li>Houve reajuste de preço acordado com o fornecedor, mas ao realizar a criação da RC/OC não foi atualizado o valor;</li>
+                <li>A OC já teve parte do saldo consumido em outro processo ou faturamento anterior;</li>
+            </ul>
+
+            <div class="warning-box">
+                <div>
+                    <strong>⚠️ Impacto no Processo</strong>
+                    <p>Quando há saldo insuficiente, o sistema acusa divergência impedindo o prosseguimento do processo e consequentemente impedindo o pagamento da Nota Fiscal.</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <h2>Como regularizar essa divergência?</h2>
+            <p>Para regularizar essa divergência, é necessário:</p>
+            <ul>
+                <li><strong>Criar uma nova RC/OC com o valor total correto da Nota Fiscal;</strong> ou</li>
+                <li><strong>Criar uma RC/OC complementar, exclusivamente para cobrir o valor faltante;</strong></li>
+                <li><strong>Conferir se o fornecedor faturou corretamente os valores, quantidades e itens acordados;</strong></li>
+                <li><strong>Caso o valor da Nota esteja incorreto, solicitar o cancelamento da Nota Fiscal junto ao fornecedor e, após isso, a reemissão com o valor correto.</strong></li>
+            </ul>
+
+            <div class="info-box">
+                <strong>💡 Dica:</strong> Sempre verifique se os valores, quantidades e itens da Nota Fiscal estão corretos antes de criar a OC complementar. Isso evita problemas futuros e retrabalho.
+            </div>
+
+            <div class="divider"></div>
+
+            <a href="index.html#divergencias" class="link-button">← Voltar para Divergências</a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll para links da navbar
+        document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
