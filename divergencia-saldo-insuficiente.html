@@ -5,7 +5,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divergência de LC116 - V360</title>
+    <title>Divergência de Saldo Insuficiente - V360</title>
 
     
     <style>
@@ -139,12 +139,6 @@
             border-radius: 4px;
         }
 
-        .success-box:before {
-            content: "✔️";
-            font-size: 20px;
-            margin-right: 10px;
-        }
-
         .divider {
             border-top: 2px solid #ddd;
             margin: 30px 0;
@@ -213,84 +207,39 @@
         <a href="index.html#busca">Busca de Notas</a>
     </div>
 
-    <div class="section-title">Divergência de LC116</div>
+    <div class="section-title">Divergência de Saldo Insuficiente</div>
 
     <div class="container">
         <div class="text-section">
-            <h2>O que é a LC 116?</h2>
-            <p>A <strong>Lei Complementar 116/2003</strong> é a legislação que regulamenta o ISS (Imposto Sobre Serviços).</p>
-            <p>Ela traz uma lista de códigos que identificam cada tipo de serviço prestado, chamada <strong>Lista de Serviços – LC116</strong>.</p>
-            <p>Cada serviço possui um código específico (ex.: 13.04, 13.05, 17.05…), e escolher o código correto é fundamental para:</p>
-            <ul>
-                <li>determinar o tratamento tributário,</li>
-                <li>definir se há retenção ou não,</li>
-                <li>assegurar que a nota fiscal e o pedido/contrato estejam coerentes,</li>
-                <li>evitar glosas, atrasos e devoluções de documentos.</li>
-            </ul>
+            <h2>O que é a Divergência de Saldo Insuficiente?</h2>
+            <p>Essa divergência ocorre quando o <strong>valor total da Nota Fiscal é superior ao saldo disponível na Ordem de Compra (OC)</strong> vinculada ao processo, impossibilitando a continuidade do fluxo.</p>
 
             <div class="divider"></div>
+
+            <h3>Ela pode acontecer, principalmente, nas seguintes situações:</h3>
+            <ul>
+                <li>A Nota Fiscal foi emitida com valor diferente do que estava previsto na OC;</li>
+                <li>Houve reajuste de preço acordado com o fornecedor, mas ao realizar a criação da RC/OC não foi atualizado o valor;</li>
+                <li>A OC já teve parte do saldo consumido em outro processo ou faturamento anterior;</li>
+            </ul>
 
             <div class="warning-box">
                 <div>
-                    <strong>⚠️ Como surgem divergências no dia a dia?</strong>
-                    <p>Uma divergência ocorre quando o código LC116 utilizado na Nota Fiscal é diferente do código usado na RC/OC.</p>
+                    <strong>⚠️ Impacto no Processo</strong>
+                    <p>Quando há saldo insuficiente, o sistema acusa divergência impedindo o prosseguimento do processo e consequentemente impedindo o pagamento da Nota Fiscal.</p>
                 </div>
-            </div>
-
-            <h3>Exemplo de caso:</h3>
-            <ul>
-                <li><strong>LC116 do Pedido/OC:</strong> 13.04</li>
-                <li><strong>LC116 da Nota Fiscal:</strong> 13.05</li>
-            </ul>
-
-            <p>Isso significa que:</p>
-            <ul>
-                <li>O fornecedor faturou um serviço diferente daquele que foi pedido do ponto de vista tributário,</li>
-                <li>ou o pedido foi criado com o código incorreto para o serviço realmente contratado.</li>
-            </ul>
-
-            <h3>Essas divergências são comuns quando:</h3>
-            <ul>
-                <li>o fornecedor interpreta o serviço de forma diferente de quem criou a RC/OC;</li>
-                <li>há mais de um código possível para serviços semelhantes;</li>
-                <li>o item cadastrado na RC/OC não corresponde exatamente ao serviço executado;</li>
-                <li>a empresa altera o escopo do serviço, mas o pedido não é atualizado.</li>
-            </ul>
-
-            <div class="divider"></div>
-
-            <h2>Possíveis resoluções</h2>
-
-            <div class="success-box">
-                <h3>1. A Nota Fiscal está correta?</h3>
-                <p>Se o serviço prestado realmente corresponde à LC116 13.05, então:</p>
-                <ul>
-                    <li>A NF está correta</li>
-                    <li>A RC/OC precisa ser ajustada</li>
-                    <li>Deve-se emitir nova RC/OC utilizando o item correto:</li>
-                </ul>
-                <div class="info-box">
-                    <strong>COMPOSIÇÃO GRÁFICA | LC116 13.05</strong>
-                </div>
-                <p>Isso garante que o pedido e a nota fiscal estejam alinhados e o processo possa seguir normalmente.</p>
             </div>
 
             <div class="divider"></div>
 
-            <div class="success-box">
-                <h3>2. A OC está correta e a NF foi emitida com código errado?</h3>
-                <p>Se o serviço contratado é realmente o da LC116 13.04, então:</p>
-                <ul>
-                    <li>A OC está correta</li>
-                    <li>A NF está incorreta</li>
-                    <li>O fornecedor deverá:</li>
-                </ul>
-                <ul style="list-style-type: circle; padding-left: 40px;">
-                    <li>Cancelar a Nota Fiscal emitida, e</li>
-                    <li>Emitir nova NF utilizando o código correto: 13.04</li>
-                </ul>
-                <p>Isso evita problemas fiscais e inconsistências no sistema.</p>
-            </div>
+            <h2>Como regularizar essa divergência?</h2>
+            <p>Para regularizar essa divergência, é necessário:</p>
+            <ul>
+                <li><strong>Criar uma nova RC/OC com o valor total correto da Nota Fiscal;</strong> ou</li>
+                <li><strong>Criar uma RC/OC complementar, exclusivamente para cobrir o valor faltante;</strong></li>
+                <li><strong>Conferir se o fornecedor faturou corretamente os valores, quantidades e itens acordados;</strong></li>
+                <li><strong>Caso o valor da Nota esteja incorreto, solicitar o cancelamento da Nota Fiscal junto ao fornecedor e, após isso, a reemissão com o valor correto.</strong></li>
+            </ul>
 
             <div class="divider"></div>
 
